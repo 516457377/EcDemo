@@ -38,7 +38,7 @@ public class Activity1 extends Activity implements ServiceConnection {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity1);
-        initView();
+        initView(); 
         //初始化对象
         MyListener = new MyPhoneStateListener();
         //Return the handle to a system-level service by name.通过名字获得一个系统级服务
