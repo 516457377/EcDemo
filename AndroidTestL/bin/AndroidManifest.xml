@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.androidtestl"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="19" />
+    <permission 
+        android:name="this.permission.My"
+        android:protectionLevel="normal"></permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".test1.MyBroadCast" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".act.Activity1" >
+        </activity>
+        
+        <activity android:name=".act2.Activity2"></activity>
+        
+
+        <service
+            android:name=".act.Server1"
+            android:process=":remote"
+            android:exported="true"
+            android:permission="this.permission.My"
+            android:enabled="true" >
+            
+        </service>
+        
+        <service
+            android:name=".dream.Timer"
+            android:exported="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_DREAM_SERVICE" >
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
